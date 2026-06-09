@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>terra_ufa_bez_torgov — Земля без торгов: расследование</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+
+  <!-- SEO -->
+  <meta name="description" content="Расследование «Земля·Уфа·Без Торгов»: как башкирские предприятия получают государственные земельные участки без торгов под предлогом импортозамещения. УЗЭХИМ, группа Анкор, Горбунов/Азимут. ФНС доначислила 114,9 млн руб. НДС; 18ААС снизил до 87,9 млн, умысел подтверждён (постановление 03.06.2026). Открытые данные.">
+  <meta name="keywords" content="земля без торгов, УЗЭХИМ, Анкор, Горбунов, Азимут, ФНС, Башкортостан, импортозамещение, ПП 629, расследование">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Редакция «Своя Позиция»">
+  <link rel="canonical" href="https://terra-ufa-bez-torgov.ru/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Земля·Уфа·Без Торгов">
+  <meta property="og:title" content="Земля·Уфа·Без Торгов — расследование на основе открытых данных">
+  <meta property="og:description" content="Как башкирские предприятия получают государственные земельные участки без торгов под предлогом импортозамещения. НДС Анкора снижен апелляцией с 114,9 до 87,9 млн руб. — умысел подтверждён (18ААС, 03.06.2026).">
+  <meta property="og:url" content="https://terra-ufa-bez-torgov.ru/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Земля·Уфа·Без Торгов — расследование">
+  <meta name="twitter:description" content="Земля без торгов + налоговая схема: НДС Анкора снижен 18ААС с 114,9 до 87,9 млн руб. — умысел подтверждён (03.06.2026). УЗЭХИМ, Горбунов/Азимут.">
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --ink:      #120C08;
+      --parchment:#F4EEE2;
+      --paper:    #FAF7F2;
+      --burgundy: #5C0F20;
+      --gold:     #A07820;
+      --dust:     #9B8E7E;
+      --rule:     #D6CCBC;
+      --col:      76rem;
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Newsreader', Georgia, serif;
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { opacity: 0; animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.36s; }
+    .delay-4 { animation-delay: 0.5s; }
+    .delay-5 { animation-delay: 0.65s; }
+
+    /* ─── TOPLINE ─── */
+    .topline {
+      background: var(--ink);
+      color: var(--dust);
+      font-family: 'Newsreader', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.09em;
+      padding: 0.45rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-style: italic;
+    }
+    .topline a { color: var(--dust); transition: color 0.2s; }
+    .topline a:hover { color: #E8DFD0; }
+    .topline-links { display: flex; gap: 1.5rem; }
+
+    /* ─── MASTHEAD ─── */
+    .masthead {
+      background: var(--ink);
+      text-align: center;
+      padding: 2.2rem 2rem 0;
+      position: relative;
+    }
+    .masthead::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin-bottom: 1.6rem;
+    }
+    .masthead-wordmark {
+      font-family: 'Cormorant Garant', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      color: var(--parchment);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .masthead-wordmark em {
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 0;
+    }
+    .masthead-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: 1rem 0 0;
+      color: var(--dust);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .masthead-rule::before,
+    .masthead-rule::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #3A3028;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      background: var(--ink);
+      border-top: 1px solid #2A221A;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #7A6E60;
+      font-family: 'Newsreader', serif;
+      font-size: 0.82rem;
+      font-style: italic;
+      letter-spacing: 0.06em;
+      padding: 0.75rem 1.3rem;
+      display: block;
+      transition: color 0.2s, background 0.2s;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 70%;
+      height: 1px;
+      background: var(--gold);
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    nav a:hover { color: var(--parchment); }
+    nav a:hover::after, nav a.active::after { transform: translateX(-50%) scaleX(1); }
+    nav a.active { color: var(--parchment); }
+
+    /* ─── GOLD RULE ─── */
+    .gold-rule {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, var(--ink) 0%, var(--gold) 30%, var(--gold) 70%, var(--ink) 100%);
+    }
+
+    /* ─── ALERT BAND ─── */
+    .alert-band {
+      background: var(--burgundy);
+      padding: 0.6rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .alert-band-label {
+      font-family: 'Newsreader', serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      white-space: nowrap;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.15rem 0.55rem;
+    }
+    .alert-band-text {
+      font-family: 'Newsreader', serif;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      height: 84vh;
+      min-height: 500px;
+      max-height: 760px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0E0A06 0%, #1A1008 40%, #120C08 100%);
+    }
+    /* SVG terrain pattern */
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 60L30 0L60 60' fill='none' stroke='%23A07820' stroke-width='0.5'/%3E%3C/svg%3E");
+      background-size: 60px 60px;
+    }
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(18,12,8,0.95) 0%, rgba(18,12,8,0.6) 50%, rgba(18,12,8,0.3) 100%),
+        linear-gradient(to top, rgba(18,12,8,0.85) 0%, transparent 55%);
+    }
+    .hero-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 3rem 3rem 4rem;
+      max-width: 74rem;
+    }
+    .hero-kicker {
+      font-family: 'Newsreader', serif;
+      font-size: 0.75rem;
+      font-style: italic;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garant', serif;
+      font-weight: 600;
+      font-size: clamp(2.2rem, 4.5vw, 3.9rem);
+      line-height: 1.1;
+      color: var(--parchment);
+      letter-spacing: -0.01em;
+      max-width: 700px;
+      margin-bottom: 1.4rem;
+    }
+    .hero h1 em { font-style: italic; color: #E8DFD0; }
+    .hero-deck {
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: #A89880;
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      font-family: 'Newsreader', serif;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #7A6E60;
+    }
+    .hero-meta .author { color: var(--parchment); font-weight: 500; }
+    .hero-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Newsreader', serif;
+      font-size: 0.78rem;
+      font-style: italic;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(160, 120, 32, 0.4);
+      padding: 0.6rem 1.4rem;
+      transition: background 0.2s, border-color 0.2s;
+      margin-top: 1.2rem;
+      display: inline-block;
+    }
+    .hero-read-more:hover {
+      background: rgba(160, 120, 32, 0.15);
+      border-color: var(--gold);
+    }
+
+    /* ─── DATELINE STRIP ─── */
+    .dateline-strip {
+      background: var(--parchment);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.7rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow: hidden;
+    }
+    .dateline-label {
+      font-family: 'Newsreader', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      white-space: nowrap;
+      padding-right: 1.5rem;
+      border-right: 1px solid var(--rule);
+      margin-right: 1.5rem;
+      font-weight: 500;
+    }
+    .dateline-ticker {
+      display: flex;
+      gap: 2.5rem;
+      animation: ticker 46s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .dateline-ticker span {
+      font-family: 'Newsreader', serif;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--dust);
+    }
+    .dateline-ticker span::before { content: '— '; color: var(--rule); }
+
+    /* ─── LAYOUT ─── */
+    .page {
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    /* ─── SECTION HEADER ─── */
+    .s-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 2.8rem 0 1.6rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 2rem;
+    }
+    .s-num { font-family: 'Cormorant Garant', serif; font-size: 0.9rem; font-style: italic; color: var(--gold); letter-spacing: 0.06em; }
+    .s-title { font-family: 'Cormorant Garant', serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); }
+    .s-line { flex: 1; height: 1px; background: var(--rule); }
+
+    /* ─── REPORTAGE GRID ─── */
+    .reportage-layout {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3px;
+      background: var(--rule);
+      margin-bottom: 3px;
+    }
+    .reportage-layout .r-cell { background: var(--paper); padding: 2.2rem; }
+    .reportage-layout .r-cell.dark { background: var(--ink); }
+
+    .r-3col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+      background: var(--rule);
+    }
+    .r-3col .r-cell { background: var(--paper); padding: 1.8rem; }
+
+    .art-tag {
+      font-family: 'Newsreader', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 0.7rem;
+      font-style: italic;
+    }
+    .art-tag.gold { color: var(--gold); }
+    .art-tag.light { color: #9A8A78; }
+
+    .art-h2 {
+      font-family: 'Cormorant Garant', serif;
+      font-weight: 600;
+      font-size: 1.85rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 0.9rem;
+    }
+    .art-h2 a:hover { color: var(--burgundy); }
+    .dark .art-h2 { color: var(--parchment); }
+    .dark .art-h2 a:hover { color: var(--gold); }
+
+    .art-h3 {
+      font-family: 'Cormorant Garant', serif;
+      font-weight: 600;
+      font-size: 1.32rem;
+      line-height: 1.22;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 0.7rem;
+    }
+    .art-h3 a:hover { color: var(--burgundy); }
+
+    .art-body { font-size: 0.95rem; line-height: 1.72; color: #4A3E32; margin-bottom: 1rem; }
+    .dark .art-body { color: #8A7E72; }
+
+    .art-foot {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--dust);
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+    .dark .art-foot { border-top-color: #2A221A; color: #5A4E44; }
+    .art-foot strong { color: var(--ink); font-style: normal; font-weight: 500; }
+    .dark .art-foot strong { color: var(--parchment); }
+
+    .r-cell.flex { display: flex; flex-direction: column; }
+
+    /* ─── FACTS BOX ─── */
+    .facts-box {
+      background: var(--parchment);
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem 1.5rem;
+      margin: 1.2rem 0;
+    }
+    .facts-box-title {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.7rem;
+    }
+    .facts-box ul { list-style: none; }
+    .facts-box li {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: #4A3E32;
+      padding: 0.25rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      gap: 0.7rem;
+    }
+    .facts-box li:last-child { border-bottom: none; }
+    .facts-box li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+
+    /* ─── PARTICIPANTS SECTION ─── */
+    .participants-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 0;
+    }
+    .participant-card {
+      padding: 2rem 0;
+      border-top: 2px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+    }
+    .participant-card:hover .participant-name { color: var(--burgundy); }
+    .participant-name {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+      transition: color 0.2s;
+    }
+    .participant-role { font-size: 0.72rem; font-style: italic; color: var(--dust); letter-spacing: 0.04em; margin-bottom: 1rem; }
+    .participant-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #4A3E32;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .participant-desc::before {
+      content: '\201C';
+      font-family: 'Cormorant Garant', serif;
+      font-size: 3.2rem;
+      color: var(--rule);
+      position: absolute;
+      left: -0.3rem;
+      top: -0.5rem;
+      line-height: 1;
+    }
+    .participant-links {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .participant-link {
+      font-size: 0.7rem;
+      font-style: italic;
+      letter-spacing: 0.08em;
+      color: var(--dust);
+      padding: 0.2rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .participant-link strong { color: var(--ink); font-style: normal; font-size: 0.72rem; }
+
+    /* ─── DOCUMENT SECTION ─── */
+    .doc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--rule);
+    }
+    .doc-card {
+      background: var(--paper);
+      padding: 2.2rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .doc-card:hover { background: var(--parchment); }
+
+    .doc-badge {
+      font-family: 'Newsreader', serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border: 1px solid currentColor;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .badge-fnc { color: var(--burgundy); }
+    .badge-egryl { color: #4A6A4A; }
+    .badge-court { color: var(--ink); }
+    .badge-land { color: var(--gold); }
+    .badge-appeal { color: #8A6200; background: rgba(160,120,32,0.12); border-color: rgba(160,120,32,0.4); }
+
+    .doc-q {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.28rem;
+      font-weight: 600;
+      line-height: 1.28;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+    .doc-who { font-size: 0.78rem; color: var(--dust); margin-bottom: 1rem; }
+    .doc-who strong { color: var(--ink); }
+    .doc-teaser {
+      font-size: 0.9rem;
+      line-height: 1.68;
+      color: #5A4E44;
+      border-left: 2px solid var(--rule);
+      padding-left: 1rem;
+    }
+
+    .doc-full {
+      background: var(--burgundy);
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .df-label {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.1);
+      line-height: 1;
+    }
+    .df-text .doc-q { color: var(--parchment); }
+    .df-text .doc-who { color: rgba(255,255,255,0.5); }
+    .df-text .doc-who strong { color: var(--parchment); }
+    .df-text .doc-teaser { color: rgba(255,255,255,0.65); border-left-color: rgba(255,255,255,0.2); }
+    .df-text .doc-badge { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.3); }
+
+    /* ─── SIDEBAR ─── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 4rem;
+      padding: 3rem 0 4rem;
+    }
+
+    .sidebar-title {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding-bottom: 0.7rem;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 0;
+    }
+    .sidebar-nav-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'Newsreader', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--ink);
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    .sidebar-nav-item:hover { color: var(--burgundy); }
+    .sidebar-n {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 0.7rem;
+      font-style: normal;
+      letter-spacing: 0.1em;
+      color: var(--dust);
+      background: var(--parchment);
+      padding: 0.1rem 0.4rem;
+    }
+
+    .brief-item { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+    .brief-item:first-of-type { border-top: 2px solid var(--ink); }
+    .brief-h {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ink);
+      margin: 0.4rem 0 0.3rem;
+    }
+    .brief-h a:hover { color: var(--burgundy); }
+    .brief-meta { font-size: 0.7rem; font-style: italic; color: var(--dust); }
+
+    .subscribe { background: var(--ink); padding: 2rem; margin-top: 2rem; }
+    .subscribe h3 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--parchment);
+      margin-bottom: 0.5rem;
+    }
+    .subscribe p { font-size: 0.8rem; line-height: 1.6; color: #6A5E54; margin-bottom: 1.2rem; }
+    .sub-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .sub-form input {
+      background: #1E1610;
+      border: 1px solid #3A2E24;
+      color: var(--parchment);
+      font-family: 'Newsreader', serif;
+      font-size: 0.85rem;
+      padding: 0.6rem 0.8rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .sub-form input::placeholder { color: #4A3E34; font-style: italic; }
+    .sub-form input:focus { border-color: var(--gold); }
+    .sub-form button {
+      background: var(--burgundy);
+      color: var(--parchment);
+      border: none;
+      font-family: 'Newsreader', serif;
+      font-size: 0.78rem;
+      font-style: italic;
+      letter-spacing: 0.1em;
+      padding: 0.65rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .sub-form button:hover { background: #7A1228; }
+
+    /* ─── INSTANCES STRIP ─── */
+    .instances {
+      background: var(--parchment);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 3rem 2.5rem;
+    }
+    .inst-inner { max-width: var(--col); margin: 0 auto; }
+    .inst-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: var(--rule);
+      margin-top: 1.8rem;
+    }
+    .inst-cell {
+      background: var(--parchment);
+      padding: 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .inst-cell:hover { background: #EDE8DC; }
+    .inst-num {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--rule);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .inst-name { font-family: 'Cormorant Garant', serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+    .inst-desc { font-size: 0.8rem; line-height: 1.55; color: var(--dust); }
+    .inst-count { font-size: 0.65rem; font-style: italic; letter-spacing: 0.1em; color: var(--burgundy); margin-top: auto; padding-top: 0.8rem; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--ink); padding: 3rem 2.5rem 1.5rem; }
+    .footer-inner { max-width: var(--col); margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid #2A221A;
+      margin-bottom: 1.5rem;
+    }
+    .footer-wordmark {
+      font-family: 'Cormorant Garant', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6A5E54;
+    }
+    .footer-wordmark em { font-style: italic; color: var(--gold); letter-spacing: 0; }
+    .footer-tagline { font-size: 0.78rem; font-style: italic; color: #4A3E34; margin-top: 0.6rem; line-height: 1.6; }
+    .footer-col-h {
+      font-family: 'Newsreader', serif;
+      font-size: 0.65rem;
+      font-style: italic;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #5A4E44;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #2A221A;
+      margin-bottom: 0.8rem;
+    }
+    .footer-col a { display: block; font-size: 0.82rem; color: #4A3E34; padding: 0.28rem 0; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--parchment); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      font-style: italic;
+      color: #3A3028;
+    }
+    .footer-bottom a { color: #3A3028; transition: color 0.15s; }
+    .footer-bottom a:hover { color: #6A5E54; }
+
+    /* ─── MEDIA PUBLICATIONS ─── */
+    .media-pub-scroll-outer { position: relative; }
+
+    .media-pub-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 3px;
+      background: var(--rule);
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) var(--rule);
+      cursor: grab;
+    }
+    .media-pub-grid:active { cursor: grabbing; }
+    .media-pub-grid::-webkit-scrollbar { height: 4px; }
+    .media-pub-grid::-webkit-scrollbar-track { background: var(--rule); }
+    .media-pub-grid::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    .media-pub-card {
+      background: var(--paper);
+      padding: 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      border-top: 3px solid var(--burgundy);
+      transition: background 0.2s;
+      flex: 0 0 370px;
+      scroll-snap-align: start;
+    }
+    .media-pub-card:hover { background: var(--parchment); }
+
+    .pub-nav-btn {
+      background: transparent;
+      border: 1px solid var(--rule);
+      color: var(--dust);
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.1rem;
+      line-height: 1;
+      width: 2rem;
+      height: 1.8rem;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pub-nav-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    .media-pub-source {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.9rem;
+      gap: 0.5rem;
+    }
+    .media-pub-outlet {
+      font-family: 'Newsreader', serif;
+      font-size: 0.64rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      border: 1px solid currentColor;
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+    .media-pub-date {
+      font-size: 0.7rem;
+      font-style: italic;
+      color: var(--dust);
+      white-space: nowrap;
+    }
+    .media-pub-headline {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+    }
+    .media-pub-headline a:hover { color: var(--burgundy); }
+    .media-pub-excerpt {
+      font-size: 0.88rem;
+      line-height: 1.68;
+      color: #4A3E32;
+      flex: 1;
+    }
+    .media-pub-foot {
+      margin-top: 1.2rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .media-pub-link {
+      font-family: 'Newsreader', serif;
+      font-size: 0.72rem;
+      font-style: italic;
+      letter-spacing: 0.09em;
+      color: var(--gold);
+      transition: color 0.2s;
+    }
+    .media-pub-link:hover { color: var(--burgundy); }
+    .media-pub-link::before { content: '↗ '; font-style: normal; }
+
+    /* ─── READING PROGRESS BAR ─── */
+    #rp {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(to right, var(--gold), #C8991A);
+      transform: scaleX(0);
+      transform-origin: left center;
+      z-index: 10001;
+      pointer-events: none;
+    }
+
+    /* ─── PULSE DOT ─── */
+    .pulse-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      flex-shrink: 0;
+      margin-right: 0.6rem;
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%,100% { opacity:1; transform:scale(1);   box-shadow:0 0 0 0   rgba(255,255,255,.45); }
+      50%     { opacity:.5; transform:scale(.65); box-shadow:0 0 0 5px rgba(255,255,255,0);   }
+    }
+
+    /* ─── TYPEWRITER CURSOR ─── */
+    .tw-cursor {
+      display: inline-block;
+      width: 2px; height: .78em;
+      background: var(--gold);
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: blink .85s step-end infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity:1; }
+      50%     { opacity:0; }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .reportage-layout { grid-template-columns: 1fr; }
+      .r-3col { grid-template-columns: 1fr 1fr; }
+      .participants-wrap { grid-template-columns: 1fr; gap: 0; }
+      .doc-layout { grid-template-columns: 1fr; }
+      .doc-full { grid-template-columns: 1fr; gap: 1rem; }
+      .inst-grid { grid-template-columns: 1fr 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .media-pub-card { flex: 0 0 320px; }
+    }
+    @media (max-width: 600px) {
+      .topline { flex-direction: column; gap: 0.3rem; text-align: center; }
+      .masthead-wordmark { font-size: 1.8rem; letter-spacing: 0.08em; }
+      nav { justify-content: flex-start; overflow-x: auto; }
+      .hero { height: 72vh; }
+      .hero-content { padding: 2rem 1.5rem 2.5rem; }
+      .r-3col { grid-template-columns: 1fr; }
+      .inst-grid { grid-template-columns: 1fr; }
+      .media-pub-card { flex: 0 0 88vw; }
+      .footer-top { grid-template-columns: 1fr; }
+      .df-label { font-size: 2.2rem; }
+      .dateline-strip { display: none; }
+      .alert-band { display: none; }
+    }
+
+    /* ─── METHODOLOGY MODAL ─── */
+    .method-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(18,12,8,0.94);
+      z-index: 2000;
+      overflow-y: auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+    .method-overlay.open { display: block; }
+    .method-panel {
+      max-width: 76rem;
+      margin: 0 auto;
+      background: var(--paper);
+      position: relative;
+      animation: fadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .method-panel-head {
+      background: var(--ink);
+      padding: 2.5rem 3.5rem 2.2rem;
+      position: relative;
+    }
+    .method-panel-body { padding: 2.5rem 3.5rem 3.5rem; }
+    .method-close {
+      position: absolute;
+      top: 1.2rem; right: 1.5rem;
+      background: transparent;
+      border: 1px solid #3A2E24;
+      color: #6A5E54;
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.1rem;
+      line-height: 1;
+      width: 2.2rem; height: 2.2rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .method-close:hover { border-color: var(--gold); color: var(--gold); }
+    .method-eyebrow {
+      font-family: 'Newsreader', serif;
+      font-size: 0.72rem; font-style: italic;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.9rem;
+    }
+    .method-h1 {
+      font-family: 'Cormorant Garant', serif;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.1; color: var(--parchment); margin-bottom: 1rem;
+    }
+    .method-deck {
+      font-size: 0.95rem; line-height: 1.72;
+      color: #8A7E72; max-width: 680px;
+    }
+    .method-layer-head {
+      display: flex; align-items: baseline; gap: 1.2rem;
+      margin: 2.5rem 0 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--ink);
+    }
+    .method-layer-n {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 0.9rem; font-style: italic;
+      color: var(--gold); letter-spacing: 0.06em;
+    }
+    .method-layer-title {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.1rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink);
+    }
+    .method-body {
+      font-size: 0.92rem; line-height: 1.78;
+      color: #4A3E32; margin-bottom: 1rem;
+    }
+    .method-table {
+      width: 100%; border-collapse: collapse;
+      margin: 0.8rem 0 1.2rem; font-size: 0.875rem;
+    }
+    .method-table th {
+      font-family: 'Newsreader', serif;
+      font-size: 0.65rem; font-style: italic;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--dust); background: var(--parchment);
+      padding: 0.55rem 1rem; text-align: left;
+      border-bottom: 2px solid var(--ink);
+    }
+    .method-table td {
+      padding: 0.65rem 1rem; border-bottom: 1px solid var(--rule);
+      color: #4A3E32; vertical-align: top; line-height: 1.58;
+    }
+    .method-table tr:last-child td { border-bottom: none; }
+    .method-table td:first-child { font-weight: 500; color: var(--ink); }
+    .method-crit {
+      font-family: 'Newsreader', serif;
+      font-size: 0.78rem; font-style: italic;
+      color: var(--burgundy);
+      background: rgba(92,15,32,0.06);
+      border-left: 2px solid var(--burgundy);
+      padding: 0.7rem 1rem; margin: 0.5rem 0 1.5rem; line-height: 1.6;
+    }
+    .method-crit strong { font-style: normal; }
+    .method-matrix-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2px; background: var(--rule); margin: 1rem 0 1.5rem;
+    }
+    .mm-cell { background: var(--paper); padding: 1.3rem 1.2rem; }
+    .mm-level {
+      font-family: 'Newsreader', serif;
+      font-size: 0.62rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--burgundy); margin-bottom: 0.5rem;
+    }
+    .mm-h {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem;
+    }
+    .mm-crit { font-size: 0.78rem; line-height: 1.55; color: #5A4E44; margin-bottom: 0.5rem; }
+    .mm-status { font-family: 'Newsreader', serif; font-size: 0.7rem; font-style: italic; color: var(--dust); }
+    .method-note {
+      background: var(--parchment); border-left: 3px solid var(--rule);
+      padding: 1rem 1.4rem; margin: 1.5rem 0 0;
+      font-size: 0.88rem; line-height: 1.7; color: #5A4E44;
+    }
+    @media (max-width: 960px) {
+      .method-panel-head, .method-panel-body { padding-left: 2rem; padding-right: 2rem; }
+      .method-matrix-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .method-overlay { padding: 1rem 0.75rem 3rem; }
+      .method-panel-head, .method-panel-body { padding: 1.5rem; }
+      .method-matrix-grid { grid-template-columns: 1fr; }
+      .method-table { font-size: 0.8rem; }
+      .method-table th, .method-table td { padding: 0.5rem 0.7rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://terra-ufa-bez-torgov.ru/",
+        "url": "https://terra-ufa-bez-torgov.ru/",
+        "name": "Земля·Уфа·Без Торгов — расследование на основе открытых данных",
+        "description": "Как башкирские предприятия получают государственные земельные участки без торгов под предлогом импортозамещения, пока ФНС доначисляет им сотни миллионов рублей.",
+        "inLanguage": "ru",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Своя Позиция",
+          "url": "https://terra-ufa-bez-torgov.ru/"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://terra-ufa-bez-torgov.ru/#media-publications",
+        "name": "Публикации в СМИ — Земля·Уфа·Без Торгов",
+        "description": "Рерайты публикаций СМИ по теме расследования: земля без торгов, УЗЭХИМ, группа Анкор, Горбунов/Азимут",
+        "url": "https://terra-ufa-bez-torgov.ru/#media-publications",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "NewsArticle",
+              "@id": "https://terra-ufa-bez-torgov.ru/#pub-1",
+              "headline": "Земля без торгов: как башкирское предприятие получило государственный актив и муниципальную дорогу в нагрузку",
+              "datePublished": "2026-05-21",
+              "dateModified": "2026-05-21",
+              "description": "УЗЭХИМ получил земельный участок без торгов в рамках ПП РФ № 629 — под строительство завода для импортозамещения. Никакого строительства нет. Вместе с землёй к предприятию фактически перешла муниципальная автомобильная дорога.",
+              "author": {"@type": "Organization", "name": "Своя Позиция"},
+              "publisher": {"@type": "Organization", "name": "Своя Позиция"},
+              "about": ["УЗЭХИМ", "ПП РФ № 629", "земля без торгов", "Башкортостан"],
+              "keywords": "УЗЭХИМ, земля без торгов, ПП 629, импортозамещение, Башкортостан",
+              "inLanguage": "ru"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "NewsArticle",
+              "@id": "https://terra-ufa-bez-torgov.ru/#pub-2",
+              "headline": "Арбитраж подтвердил: 114,9 млн рублей доначислены законно — Анкор проиграл ФНС в первой инстанции",
+              "datePublished": "2026-01-29",
+              "dateModified": "2026-01-29",
+              "description": "Арбитражный суд Республики Башкортостан отказал ООО «Анкор» в иске к МИФНС № 33. Решение налоговой от 30.09.2024 о доначислении 114,9 млн рублей НДС признано законным. Умышленная схема с пятью техническими контрагентами.",
+              "author": {"@type": "Organization", "name": "Своя Позиция"},
+              "publisher": {"@type": "Organization", "name": "Своя Позиция"},
+              "about": ["Анкор", "ФНС", "НДС", "А07-10265/2025"],
+              "keywords": "Анкор, ФНС, НДС, арбитраж, налоговая схема, Башкортостан",
+              "inLanguage": "ru"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "NewsArticle",
+              "@id": "https://terra-ufa-bez-torgov.ru/#appeal-1",
+              "headline": "18ААС снизил налоговые претензии к Анкору на 27 млн рублей — умысел подтверждён (постановление 18АП-2837/2026)",
+              "datePublished": "2026-06-03",
+              "dateModified": "2026-06-09",
+              "description": "Восемнадцатый арбитражный апелляционный суд изменил решение АС РБ от 29.01.2026 по делу А07-10265/2025: НДС снижен с 114,9 до 87,9 млн руб. на основании принципа сальдирования встречных операций. 26 996 298,89 руб. признаны излишне доначисленными. Умышленный характер нарушения подтверждён. С МИФНС № 33 взысканы судебные расходы 80 000 руб.",
+              "author": {"@type": "Organization", "name": "Своя Позиция"},
+              "publisher": {"@type": "Organization", "name": "Своя Позиция"},
+              "about": ["Анкор", "18ААС", "НДС", "А07-10265/2025", "апелляция", "сальдирование"],
+              "keywords": "Анкор, 18ААС, апелляция, НДС, сальдирование, налоговая схема, Башкортостан",
+              "inLanguage": "ru"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "NewsArticle",
+              "@id": "https://ufa.bfm.ru/news/63531",
+              "headline": "Третий участок без торгов: «Азимуту» снова отдали землю у М-5",
+              "datePublished": "2024-12-16",
+              "dateModified": "2024-12-16",
+              "description": "Глава Башкирии подписал распоряжение о передаче ООО «Азимут» 7,87 тыс. кв. м у деревни Самохваловка вдоль трассы М-5 — под многотопливную АЗС без торгов. Третий участок компании Горбунова, полученный распоряжением главы региона в обход аукциона.",
+              "url": "https://ufa.bfm.ru/news/63531",
+              "author": {"@type": "Organization", "name": "Business FM Уфа"},
+              "publisher": {"@type": "Organization", "name": "Business FM Уфа"},
+              "about": ["Азимут", "Горбунов", "земля без торгов", "АЗС", "М-5"],
+              "keywords": "Азимут, Горбунов, земля без торгов, АЗС, Башкортостан, М-5",
+              "inLanguage": "ru"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- TOP LINE -->
+<div class="topline reveal">
+  <span>Понедельник, 9 июня 2026 — Расследование · Башкортостан · Открытые данные</span>
+  <div class="topline-links">
+    <a href="#" data-method="open">Методология</a>
+    <a href="#footer-sources">Источники</a>
+    <a href="#">Контакт</a>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead reveal delay-1">
+  <div class="masthead-wordmark">Земля<em>·</em>Уфа<em>·</em>Без Торгов</div>
+  <div class="masthead-rule">
+    <span>Расследование · Открытые данные · Башкортостан</span>
+  </div>
+  <nav>
+    <a href="#hero" class="active">Главная</a>
+    <a href="#uzehim">УЗЭХИМ</a>
+    <a href="#ankor">Группа Анкор</a>
+    <a href="#gorbunov">Горбунов / Азимут</a>
+    <a href="#fns">ФНС — А07-10265/2025</a>
+    <a href="#pp629">ПП РФ № 629</a>
+    <a href="#media-publications">Публикации в СМИ</a>
+    <a href="#documenty">Документы</a>
+    <a href="#hronika">Хроника</a>
+  </nav>
+</header>
+<div class="gold-rule"></div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content reveal delay-2">
+    <div class="hero-kicker">Специальный репортаж · Земельная политика · Импортозамещение</div>
+    <h1><em>Группа компаний</em> получает государственные активы без торгов — пока налоговая доначисляет сотни миллионов</h1>
+    <p class="hero-deck">
+      В Башкирии земельные участки выдаются без конкурса под предлогом импортозамещения и приоритетных инвестпроектов. Некоторые бенефициары этих участков — компании, которых ФНС уличила в создании фиктивного документооборота. Всё это есть в открытом доступе.
+    </p>
+    <div class="hero-meta">
+      <span>Автор: <span class="author">Редакция</span></span>
+      <span>·</span>
+      <span>21 мая 2026</span>
+      <span>·</span>
+      <span style="color:var(--gold); font-style:italic;">Обновлено: 9 июня 2026</span>
+      <span>·</span>
+      <span>14 мин чтения</span>
+    </div>
+    <a href="#" class="hero-read-more">Читать материал →</a>
+  </div>
+</section>
+
+<!-- ALERT BAND -->
+<div class="alert-band">
+  <span class="pulse-dot" aria-hidden="true"></span><span class="alert-band-label">Апелляция · 03.06.2026</span>
+  <span class="alert-band-text">18ААС изменил решение по делу А07-10265/2025: НДС снижен с 114,9 до 87,9 млн руб. — применён принцип сальдирования по встречным операциям с техническими контрагентами. Умышленный характер схемы (п. 3 ст. 122 НК РФ) подтверждён. С МИФНС взысканы судебные расходы 80 000 руб. в пользу Анкора.</span>
+</div>
+
+<!-- DATELINE TICKER -->
+<div class="dateline-strip">
+  <div class="dateline-label">Хроника</div>
+  <div class="dateline-ticker">
+    <span>18ААС (03.06.2026): НДС Анкора снижен с 114,9 до 87,9 млн руб. — принцип сальдирования по встречным операциям. Умысел подтверждён.</span>
+    <span>УЗЭХИМ получила землю без торгов под завод — вместе с ней в частное пользование перешла муниципальная дорога</span>
+    <span>А07-10265/2025: 18ААС изменил решение ФНС — НДС снижен до 87,9 млн, излишне доначисленным признано 26,99 млн руб.</span>
+    <span>Горбунов К.В. управляет Азимутом (473 млн выручки), ПИК (UFAOIL) и ещё одним ПИК — все получают участки под АЗС без торгов</span>
+    <span>ФНС: Анкор, УЗЭХИМ, АФК-Ресурс, Точка и ИП Иванов К.А. образуют единую взаимозависимую группу</span>
+    <span>Руководитель Анкора Иванов К.А. — соучредитель ПИК совместно с Горбуновым; ФНС зафиксировала совпадение IP-адресов группы</span>
+    <span>18ААС (03.06.2026): НДС Анкора снижен с 114,9 до 87,9 млн руб. — принцип сальдирования по встречным операциям. Умысел подтверждён.</span>
+    <span>УЗЭХИМ получила землю без торгов под завод — вместе с ней в частное пользование перешла муниципальная дорога</span>
+    <span>А07-10265/2025: 18ААС изменил решение ФНС — НДС снижен до 87,9 млн, излишне доначисленным признано 26,99 млн руб.</span>
+    <span>Горбунов К.В. управляет Азимутом (473 млн выручки), ПИК (UFAOIL) и ещё одним ПИК — все получают участки под АЗС без торгов</span>
+    <span>ФНС: Анкор, УЗЭХИМ, АФК-Ресурс, Точка и ИП Иванов К.А. образуют единую взаимозависимую группу</span>
+    <span>Руководитель Анкора Иванов К.А. — соучредитель ПИК совместно с Горбуновым; ФНС зафиксировала совпадение IP-адресов группы</span>
+  </div>
+</div>
+
+<!-- SECTION 01: КЛЮЧЕВЫЕ МАТЕРИАЛЫ -->
+<div class="page">
+  <div class="s-head reveal delay-3">
+    <span class="s-num">01</span>
+    <span class="s-title">Ключевые материалы</span>
+    <span class="s-line"></span>
+  </div>
+</div>
+
+<div class="page reveal delay-3">
+  <div class="reportage-layout">
+    <!-- BIG DARK FEATURE -->
+    <div class="r-cell dark flex">
+      <div class="art-tag gold">Расследование · Земля без торгов · ПП РФ № 629</div>
+      <div class="art-h2">
+        <a href="#">Налоговая уличила — земли продолжают выдавать: история УЗЭХИМ, Анкора и сети Горбунова</a>
+      </div>
+      <p class="art-body">
+        Арбитражный суд Республики Башкортостан отказал ООО «Анкор» в оспаривании решения МИФНС № 33: компания доначислила 114,9 млн руб. НДС за фиктивный документооборот с пятью техническими организациями. Суд установил, что Анкор, УЗЭХИМ, АФК-Ресурс и ИП Иванов — единая группа с общими IP-адресами, одним бухгалтером и одной производственной площадкой. При этом УЗЭХИМ получила земельный участок без торгов. В нагрузку к нему — муниципальная дорога.
+      </p>
+      <p class="art-body" style="font-size:0.88rem; margin-top:0.9rem; padding-top:0.9rem; border-top:1px solid #2A221A; color:#A07820;">
+        <strong style="color:#C8991A; font-weight:600;">Обновление · 03.06.2026:</strong> 18ААС (постановление 18АП-2837/2026) изменил решение первой инстанции — НДС снижен до 87,9 млн руб. за счёт сальдирования встречных операций с техническими контрагентами. 26 996 298,89 руб. признано излишне доначисленным. Умышленный характер нарушения подтверждён; с МИФНС взысканы судебные расходы 80 000 руб.
+      </p>
+      <div class="facts-box" style="background:#1E1610; border-left-color:#A07820;">
+        <div class="facts-box-title" style="color:#A07820;">Группа по версии ФНС</div>
+        <ul>
+          <li style="color:#8A7E72; border-bottom-color:#2A221A;">ООО «Анкор» — производство и оптовая торговля нефтепродуктами, ОГРН 1070277005380</li>
+          <li style="color:#8A7E72; border-bottom-color:#2A221A;">АО «УЗЭХИМ» — собственник производственной площадки ТЭЦ-4, ОГРН 1060277010188</li>
+          <li style="color:#8A7E72; border-bottom-color:#2A221A;">ЗАО «АФК-Ресурс» — хранение нефтепродуктов на нефтебазе ТЭЦ-4</li>
+          <li style="color:#8A7E72; border-bottom-color:#2A221A;">ООО «Точка» — связанная компания, совпадающие IP-адреса</li>
+          <li style="color:#8A7E72; border-bottom-color:transparent;">ИП Иванов К.А. — физическое лицо, руководитель и единственный владелец ООО «Анкор»</li>
+        </ul>
+      </div>
+      <div class="art-foot">
+        <strong>Редакция</strong>
+        <span>21 мая 2026</span>
+        <span>14 мин чтения</span>
+      </div>
+    </div>
+    <!-- SIDEBAR CARD -->
+    <div class="r-cell flex" style="background: var(--parchment);">
+      <div class="art-tag">Ключевые цифры дела</div>
+      <div style="margin-bottom: 1.5rem;">
+        <div style="font-family:'Cormorant Garant',serif; font-size:3.2rem; font-weight:300; font-style:italic; color:var(--rule); line-height:1;" data-count="87.9">87,9</div>
+        <div style="font-family:'Cormorant Garant',serif; font-size:0.9rem; font-weight:700; color:var(--ink); letter-spacing:0.05em;">МЛН РУБ. — НДС после апелляции</div>
+        <div style="font-size:0.78rem; color:var(--dust); margin-top:0.3rem; line-height:1.5;">Постановление 18ААС от 03.06.2026: снижено с 114,9 млн за счёт сальдирования. Умысел (п. 3 ст. 122 НК) подтверждён.</div>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <div style="font-family:'Cormorant Garant',serif; font-size:3.2rem; font-weight:300; font-style:italic; color:var(--rule); line-height:1;" data-count="5">5</div>
+        <div style="font-family:'Cormorant Garant',serif; font-size:0.9rem; font-weight:700; color:var(--ink); letter-spacing:0.05em;">ТЕХНИЧЕСКИХ КОНТРАГЕНТОВ</div>
+        <div style="font-size:0.78rem; color:var(--dust); margin-top:0.3rem; line-height:1.5;">Лира, Европроект, Сокол, Топаз, Вертикаль — все ликвидированы или исключены из ЕГРЮЛ</div>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <div style="font-family:'Cormorant Garant',serif; font-size:3.2rem; font-weight:300; font-style:italic; color:#A07820; line-height:1;" data-count="27.0">27,0</div>
+        <div style="font-family:'Cormorant Garant',serif; font-size:0.9rem; font-weight:700; color:var(--ink); letter-spacing:0.05em;">МЛН РУБ. — излишне доначислено</div>
+        <div style="font-size:0.78rem; color:var(--dust); margin-top:0.3rem; line-height:1.5;">18ААС: 26 996 298,89 руб. признано незаконным. МИФНС взысканы судрасходы 80 000 руб. в пользу Анкора.</div>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <div style="font-family:'Cormorant Garant',serif; font-size:3.2rem; font-weight:300; font-style:italic; color:var(--rule); line-height:1;" data-count="473">473</div>
+        <div style="font-family:'Cormorant Garant',serif; font-size:0.9rem; font-weight:700; color:var(--ink); letter-spacing:0.05em;">МЛН РУБ. — выручка «Азимута»</div>
+        <div style="font-size:0.78rem; color:var(--dust); margin-top:0.3rem; line-height:1.5;">Компания Горбунова, розничная торговля топливом, уставный капитал — 10 000 руб.</div>
+      </div>
+      <div class="art-foot">
+        <strong>Источники:</strong>
+        <span>ЕГРЮЛ, Картотека арбитражных дел, данные ФНС</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 columns -->
+  <div class="r-3col reveal delay-4">
+    <div class="r-cell flex">
+      <div class="art-tag">УЗЭХИМ · Земля · Дорога</div>
+      <div class="art-h3"><a href="#">УЗЭХИМ: завод получил, дорога в нагрузку — муниципальный актив в частном пользовании</a></div>
+      <p class="art-body" style="font-size:0.88rem;">Уфимский завод экспериментальных химических продуктов получил земельный участок без торгов под строительство завода в рамках импортозамещения. Изменений на площадке до сих пор нет. Вместе с землёй к предприятию фактически перешла и муниципальная автомобильная дорога.</p>
+      <div class="art-foot">
+        <strong>Редакция</strong>
+        <span>Апрель 2026</span>
+      </div>
+    </div>
+    <div class="r-cell flex">
+      <div class="art-tag">Иванов · Горбунов · ПИК</div>
+      <div class="art-h3"><a href="#">Иванов и Горбунов: от нефтебазы ТЭЦ-4 к сети заправок без торгов</a></div>
+      <p class="art-body" style="font-size:0.88rem;">Константин Иванов, руководитель Анкора, является соучредителем ООО «ПИК» совместно с Кириллом Горбуновым. Горбунов, в свою очередь, контролирует ещё один ПИК с зарегистрированным товарным знаком UFAOIL и ООО «Азимут» — сеть АЗС, получающую участки без торгов. Выручка Азимута в 2025 году — 473 млн рублей.</p>
+      <div class="art-foot">
+        <strong>Редакция</strong>
+        <span>Май 2026</span>
+      </div>
+    </div>
+    <div class="r-cell flex">
+      <div class="art-tag">ФНС · Налоговый спор · А07-10265/2025</div>
+      <div class="art-h3"><a href="#">Анкор: НДС 114,9 млн, бумажные контрагенты и совпадающие IP-адреса трёх компаний</a></div>
+      <p class="art-body" style="font-size:0.88rem;">Налоговая проверка за 2020–2022 годы выявила, что Анкор производил нефтепродукты на территории УЗЭХИМ, не декларируя производство, и оформлял покупку сырья через пять технических компаний без реальных поставок. Суд первой инстанции согласился с ФНС (29.01.2026). 18ААС (03.06.2026) снизил НДС до 87,9 млн руб. — принцип сальдирования. Умысел подтверждён.</p>
+      <div class="art-foot">
+        <strong>Редакция</strong>
+        <span>29 января 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 02: УЧАСТНИКИ -->
+<div class="page">
+  <div class="s-head reveal">
+    <span class="s-num">02</span>
+    <span class="s-title">Участники схемы</span>
+    <span class="s-line"></span>
+  </div>
+  <div class="participants-wrap reveal">
+    <div class="participant-card" id="ankor">
+      <div class="participant-name">Константин Иванов</div>
+      <div class="participant-role">Директор и единственный владелец ООО «Анкор» (ИНН 027703885708) · ИП Иванов К.А. · бывший акционер ЗАО «АФК-Ресурс»</div>
+      <p class="participant-desc">ФНС установила, что Иванов контролирует Анкор, АФК-Ресурс и через IP-адреса — технических контрагентов схемы. Бухгалтер Анкора Чуканова Л.Р. одновременно фигурирует в реестрах УЗЭХИМ и АФК-Ресурс. Иванов является соучредителем ООО «ПИК» совместно с Горбуновым К.В.</p>
+      <div class="participant-links">
+        <div class="participant-link"><strong>Анкор:</strong> ОГРН 1070277005380, решение суда А07-10265/2025</div>
+        <div class="participant-link"><strong>Доначислено ФНС:</strong> 114,9 млн руб. НДС + 2,5 млн руб. налог на прибыль</div>
+        <div class="participant-link"><strong>ПИК (соучредитель):</strong> ОГРН 1160280118239 совместно с Горбуновым</div>
+      </div>
+    </div>
+    <div class="participant-card" id="gorbunov">
+      <div class="participant-name">Кирилл Горбунов</div>
+      <div class="participant-role">Директор ООО «Азимут» (473 млн выручки) · Директор ООО «ПИК» (UFAOIL) · Директор ООО «ПИК» (Дёмское шоссе, 4) · ИНН 027201312728</div>
+      <p class="participant-desc">Горбунов управляет тремя компаниями топливного сектора. ООО «Азимут», зарегистрированное в 2022 году, получает земельные участки под АЗС без торгов в значительном количестве. Балансовая стоимость активов Азимута — 292 млн рублей при уставном капитале 10 000 рублей. В ООО «ПИК» (Михайловка) зарегистрирован товарный знак UFAOIL.</p>
+      <div class="participant-links">
+        <div class="participant-link"><strong>Азимут:</strong> ОГРН 1220200034515, выручка 473 млн, баланс 292 млн</div>
+        <div class="participant-link"><strong>ПИК (UFAOIL):</strong> ОГРН 1210200029973, с. Михайловка Уфимского р-на</div>
+        <div class="participant-link"><strong>ПИК (Дёмское):</strong> ОГРН 1160280118239, ш. Дёмское, 4</div>
+      </div>
+    </div>
+    <div class="participant-card" id="uzehim">
+      <div class="participant-name">АО «УЗЭХИМ»</div>
+      <div class="participant-role">Уфимский завод экспериментальных химических продуктов · ИНН 0277074450 · собственник территории ТЭЦ-4</div>
+      <p class="participant-desc">УЗЭХИМ является собственником производственной площадки ТЭЦ-4 в Уфе, где находятся и Анкор, и АФК-Ресурс. Суд установил аффилированность УЗЭХИМ с группой Иванова по совпадающим контактным данным и совместной хозяйственной деятельности. УЗЭХИМ получила земельный участок без торгов под импортозамещающий завод — вместе с муниципальной дорогой.</p>
+      <div class="participant-links">
+        <div class="participant-link"><strong>Площадка:</strong> г. Уфа, промзона территория ТЭЦ-4</div>
+        <div class="participant-link"><strong>Аффилированность:</strong> подтверждена решением суда А07-10265/2025</div>
+        <div class="participant-link"><strong>Земля без торгов:</strong> ПП РФ № 629 (импортозамещение)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 03: ДОКУМЕНТАЛЬНАЯ БАЗА -->
+<div class="page" id="documenty">
+  <div class="s-head reveal">
+    <span class="s-num">03</span>
+    <span class="s-title">Документальная база</span>
+    <span class="s-line"></span>
+  </div>
+</div>
+
+<div class="page reveal">
+  <!-- Featured document card — APPELLATE (most recent) -->
+  <div class="doc-full" id="fns" style="margin-bottom: 3px; background: linear-gradient(135deg, #1A1200 0%, #0E0900 100%);">
+    <div class="df-label" style="color: rgba(160,120,32,0.25);">18ААС</div>
+    <div class="df-text">
+      <div class="doc-badge badge-appeal" style="display:inline-block; margin-bottom:1rem;">Восемнадцатый ААС · 03.06.2026</div>
+      <div class="doc-q" style="color: var(--parchment);">«Решение суда первой инстанции изменить. Признать недействительным решение МИФНС в части НДС 26 996 298,89 руб. — умышленный характер нарушения подтверждён»</div>
+      <div class="doc-who" style="color: rgba(255,255,255,0.5);">
+        <strong style="color:var(--parchment);">Дело А07-10265/2025 · 18АП-2837/2026</strong> · Пред. Бояршинова Е.В. · Мирошник А.С., Скобелкин А.П. · ООО «Анкор» vs МИФНС № 33 по РБ
+      </div>
+      <p class="doc-teaser" style="color:rgba(255,255,255,0.65); border-left-color:rgba(160,120,32,0.4);">Апелляция применила принцип сальдирования: по контрагентам с двусторонними отношениями (Лира, Европроект, Сокол, Топаз) действительное обязательство определено как разница неподтверждённых вычетов и неподтверждённой выручки. Итог: НДС снижен с 114,9 до 87,9 млн руб. С МИФНС взысканы судрасходы 80 000 руб. в пользу Анкора. Возможна кассация в АС Уральского округа.</p>
+    </div>
+  </div>
+
+  <!-- Featured document card — первая инстанция -->
+  <div class="doc-full" style="margin-bottom: 3px;">
+    <div class="df-label">§54.1</div>
+    <div class="df-text">
+      <div class="doc-badge" style="color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.3);">Арбитражный суд РБ · 29.01.2026</div>
+      <div class="doc-q">«Суд не находит оснований для удовлетворения заявленных требований — решение МИФНС № 33 от 30.09.2024 признано законным»</div>
+      <div class="doc-who">
+        <strong>Дело А07-10265/2025</strong> · Судья Кутлин Р.К. · ООО «Анкор» vs МИФНС № 33 по РБ
+      </div>
+      <p class="doc-teaser">Суд установил умышленное создание формального документооборота с целью получения вычетов по НДС. Транспортировки нефтепродуктов не было: ни один из пяти технических контрагентов не располагал транспортными средствами и не производил сырьё. Анкор, УЗЭХИМ, АФК-Ресурс, Точка и ИП Иванов образуют единую систему взаимозависимой деятельности.</p>
+    </div>
+  </div>
+
+  <div class="doc-layout">
+    <div class="doc-card">
+      <div class="doc-badge badge-fnc">УФНС по РБ · 28.12.2024</div>
+      <div class="doc-q">«Апелляционная жалоба ООО «Анкор» оставлена без удовлетворения — решение МИФНС № 33 вступает в законную силу»</div>
+      <div class="doc-who"><strong>УФНС России по Республике Башкортостан</strong> · Решение № 491/17 от 28.12.2024 · рассмотрение апелляционной жалобы ООО «Анкор»</div>
+      <p class="doc-teaser">Вышестоящий налоговый орган поддержал выводы МИФНС № 33: схема с пятью техническими контрагентами признана умышленной, доначисление 114,9 млн руб. НДС и 2,5 млн руб. налога на прибыль законным. Решение № 12-39/12 от 30.09.2024 вступило в силу с 28.12.2024. Именно это решение Анкор обжаловал в арбитражном суде по делу А07-10265/2025.</p>
+    </div>
+    <div class="doc-card">
+      <div class="doc-badge badge-fnc">ФНС · Схема</div>
+      <div class="doc-q">«Совпадение IP-адресов Анкора, УЗЭХИМ, АФК-Ресурса и технических контрагентов — управление из единого центра»</div>
+      <div class="doc-who"><strong>МИФНС № 33 по РБ</strong> · Решение № 12-39/12 от 30.09.2024 · выездная проверка за 2020–2022 гг.</div>
+      <p class="doc-teaser">Проверка выявила: бензин производился на ТЭЦ-4 без декларирования; технические контрагенты не имели транспорта, не производили и не хранили нефтепродукты; оплата не соответствовала документированным объёмам («бумажный НДС»); паспорта качества и ТТН не представлены.</p>
+    </div>
+    <div class="doc-card">
+      <div class="doc-badge badge-land">Глава РБ · Распоряжение</div>
+      <div class="doc-q">«Предоставить АО «УЗЭХИМ» земельный участок в аренду без проведения торгов — реализация приоритетного инвестиционного проекта в сфере импортозамещения»</div>
+      <div class="doc-who"><strong>Распоряжение Главы Республики Башкортостан</strong> · предоставление земельного участка АО «УЗЭХИМ» без торгов · основание: ПП РФ № 629, постановление Правительства РБ № 292</div>
+      <p class="doc-teaser">Глава Башкортостана подписал распоряжение о передаче АО «УЗЭХИМ» земельного участка в аренду без торгов в Орджоникидзевском районе Уфы — под строительство завода присадок для автомобильного бензина и смазочных материалов. На дату публикации расследования строительство не начато. Вместе с участком к УЗЭХИМ фактически перешла муниципальная автомобильная дорога.</p>
+    </div>
+    <div class="doc-card">
+      <div class="doc-badge badge-land" id="pp629">Земля · ПП РФ № 629</div>
+      <div class="doc-q">«Участки без торгов под импортозамещение — механизм, который в Башкирии работает в пользу группы связанных лиц»</div>
+      <div class="doc-who"><strong>Постановление Правительства РФ № 629</strong> · аренда без торгов для нужд импортозамещения</div>
+      <p class="doc-teaser">ПП РФ № 629 позволяет предоставлять земельные участки в аренду без торгов для реализации инвестиционных проектов в сфере импортозамещения. Региональные чиновники согласовывают такие сделки. Вопрос: доводится ли до руководства региона информация о том, что бенефициары этих участков фигурируют в решениях судов как нарушители законодательства?</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 05: ПУБЛИКАЦИИ В СМИ -->
+<!-- ════════════════════════════════════════════════════════════════
+     ШАБЛОН КАРТОЧКИ — копировать и вставлять внутрь .media-pub-grid
+     ────────────────────────────────────────────────────────────────
+  <article class="media-pub-card">
+    <div class="media-pub-source">
+      <span class="media-pub-outlet">Название издания</span>
+      <span class="media-pub-date">ДД месяц ГГГГ</span>
+    </div>
+    <div class="media-pub-headline"><a href="ССЫЛКА_НА_ОРИГИНАЛ" target="_blank">Заголовок статьи в точности как в публикации</a></div>
+    <p class="media-pub-excerpt">Рерайт: 3–5 предложений с ключевыми фактами и выводами публикации. Что было найдено, кто фигурирует, какой документ лёг в основу.</p>
+    <div class="media-pub-foot">
+      <a href="ССЫЛКА_НА_ОРИГИНАЛ" class="media-pub-link" target="_blank">Материал в источнике</a>
+    </div>
+  </article>
+════════════════════════════════════════════════════════════════ -->
+<div class="page" id="media-publications">
+  <div class="s-head reveal">
+    <span class="s-num">04</span>
+    <span class="s-title">Публикации в СМИ</span>
+    <span class="s-line"></span>
+    <button class="pub-nav-btn" id="pub-prev" aria-label="Предыдущие публикации">←</button>
+    <button class="pub-nav-btn" id="pub-next" aria-label="Следующие публикации">→</button>
+  </div>
+</div>
+
+<div class="page reveal" style="padding-bottom: 3rem;">
+  <div class="media-pub-scroll-outer">
+  <div class="media-pub-grid" id="media-pub-grid">
+
+    <!-- ═══ КАРТОЧКА 1 ═══ -->
+    <article class="media-pub-card">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet">РБК Уфа</span>
+        <span class="media-pub-date">15 марта 2024</span>
+      </div>
+      <div class="media-pub-headline"><a href="https://ufa.rbc.ru/ufa/15/03/2024/65f3f8c69a794714f8ffd661" target="_blank">Под мусороперерабатывающий комплекс в Башкирии выделили 15 гектаров. Без торгов</a></div>
+      <p class="media-pub-excerpt">Глава Башкирии передал в аренду 15,2 гектара у деревни Кургашево Кигинского района компании «Мусороперерабатывающий комплекс ЭКО» — без торгов, на основании статуса приоритетного инвестпроекта, присвоенного в январе 2024 года. Кадастровая стоимость участка — 8,3 млн рублей. Компания «ЭКО» зарегистрирована в 2022 году, учредитель — Александр Акулинин, заявленные инвестиции — 300 млн рублей. Проект представлял на «Инвестчасе» у главы региона за два месяца до подписания распоряжения о земле.</p>
+      <div class="media-pub-foot">
+        <a href="https://ufa.rbc.ru/ufa/15/03/2024/65f3f8c69a794714f8ffd661" class="media-pub-link" target="_blank">Материал в источнике</a>
+      </div>
+    </article>
+
+    <!-- ═══ КАРТОЧКА 2 ═══ -->
+    <article class="media-pub-card">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet">Neftegaz.ru</span>
+        <span class="media-pub-date">11 апреля 2024</span>
+      </div>
+      <div class="media-pub-headline"><a href="https://neftegaz.ru/news/neftechim/829017-uzekhim-planiruet-postroit-v-g-ufa-zavod-po-proizvodstvu-prisadok-dlya-benzina-i-motornykh-masel/" target="_blank">УЗЭХИМ планирует построить в Уфе завод по производству присадок для бензина и моторных масел</a></div>
+      <p class="media-pub-excerpt">УЗЭХИМ (ИНН 0277074450) получил земельный участок в Орджоникидзевском районе Уфы без торгов — под строительство завода присадок для автомобильного бензина и смазочных материалов. Проектная мощность — свыше 1000 тонн присадок в год, запуск намечен на 2026 год. Участок выделен как приоритетный инвестпроект. Арбитражный суд позднее установил аффилированность УЗЭХИМ с ООО «Анкор», которому ФНС доначислила 114,9 млн рублей НДС: одна площадка на ТЭЦ-4, совпадающие IP-адреса, общий бухгалтер.</p>
+      <div class="media-pub-foot">
+        <a href="https://neftegaz.ru/news/neftechim/829017-uzekhim-planiruet-postroit-v-g-ufa-zavod-po-proizvodstvu-prisadok-dlya-benzina-i-motornykh-masel/" class="media-pub-link" target="_blank">Материал в источнике</a>
+      </div>
+    </article>
+
+    <!-- ═══ КАРТОЧКА 3 ═══ -->
+    <article class="media-pub-card">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet">РБК Уфа</span>
+        <span class="media-pub-date">30 сентября 2024</span>
+      </div>
+      <div class="media-pub-headline"><a href="https://ufa.rbc.ru/ufa/30/09/2024/66fa5e299a794770c1934cc0" target="_blank">593 участка без торгов: как Башкирия выдаёт землю под импортозамещение</a></div>
+      <p class="media-pub-excerpt">С 2022 года предприниматели арендовали в Башкирии 593 участка без торгов по программе поддержки импортозамещающих производств — суммарный заявленный инвестпортфель превышает 37 млрд рублей. Замминистра экономразвития республики сообщил об отмене требований к объёму финансирования, числу рабочих мест и уровню зарплат: теперь достаточно декларации инвестора. Вся процедура укладывается в 30 дней. Механизм проверки того, реализуются ли заявленные проекты, в докладе описан не был.</p>
+      <div class="media-pub-foot">
+        <a href="https://ufa.rbc.ru/ufa/30/09/2024/66fa5e299a794770c1934cc0" class="media-pub-link" target="_blank">Материал в источнике</a>
+      </div>
+    </article>
+
+    <!-- ═══ КАРТОЧКА 4 ═══ -->
+    <article class="media-pub-card">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet">Молодёжная газета</span>
+        <span class="media-pub-date">16 ноября 2024</span>
+      </div>
+      <div class="media-pub-headline"><a href="https://mgazeta.com/news/novosti/2024-11-16/v-bashkortostane-investor-poluchil-zemelnyy-uchastok-v-arendu-bez-torgov-4010972" target="_blank">«Дорожное эксплуатационное предприятие № 103» получило землю в Иглинском районе без торгов</a></div>
+      <p class="media-pub-excerpt">ДЭП-103 — дорожный подрядчик, ремонтирующий трассу М-5 в Башкирии, — арендовал 33 гектара в Иглинском районе без торгов на основании статуса приоритетного инвестпроекта. Распоряжение подписал глава республики. Заявленные инвестиции — около 1,5 млрд рублей, цель — производство материалов для дорожной отрасли. Проект прошёл через «Инвестчас»: после присвоения статуса ПИП документы поступили в Минземимущества, основание — постановление правительства РБ № 292.</p>
+      <div class="media-pub-foot">
+        <a href="https://mgazeta.com/news/novosti/2024-11-16/v-bashkortostane-investor-poluchil-zemelnyy-uchastok-v-arendu-bez-torgov-4010972" class="media-pub-link" target="_blank">Материал в источнике</a>
+      </div>
+    </article>
+
+    <!-- ═══ КАРТОЧКА 5 ═══ -->
+    <article class="media-pub-card">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet">УФА1.ру</span>
+        <span class="media-pub-date">15 декабря 2024</span>
+      </div>
+      <div class="media-pub-headline"><a href="https://ufa1.ru/text/business/2024/12/15/74882519/" target="_blank">Убыточная и без сотрудников — «Азимут» получает третий участок без торгов</a></div>
+      <p class="media-pub-excerpt">Глава Башкирии выделил «Азимуту» третий участок без торгов — 78,67 сотки у деревни Самохваловка вдоль трассы М-5 под АЗС и автогазонаполнительную станцию. Компания основана в 2022 году, по итогам 2023-го — убыток 6,1 млн рублей, сотрудников в штате нет. К декабрю 2024-го у «Азимута» три участка, все переданы распоряжениями главы республики без торгов. Учредитель Кирилл Горбунов ранее владел долей совместно с Константином Ивановым — руководителем ООО «Анкор», которому ФНС доначислила 114,9 млн рублей НДС.</p>
+      <div class="media-pub-foot">
+        <a href="https://ufa1.ru/text/business/2024/12/15/74882519/" class="media-pub-link" target="_blank">Материал в источнике</a>
+      </div>
+    </article>
+
+    <!-- ═══ КАРТОЧКА 6 ═══ -->
+    <article class="media-pub-card">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet">Business FM Уфа</span>
+        <span class="media-pub-date">16 декабря 2024</span>
+      </div>
+      <div class="media-pub-headline"><a href="https://ufa.bfm.ru/news/63531" target="_blank">Третий участок без торгов: «Азимуту» снова отдали землю у М-5</a></div>
+      <p class="media-pub-excerpt">Глава Башкирии подписал распоряжение о передаче «Азимуту» 7,87 тыс. кв. м у деревни Самохваловка вдоль трассы М-5 — под многотопливную АЗС и автогазонаполнительную станцию. Это третий участок компании без торгов: в сумме около двух гектаров на одном отрезке федеральной дороги, все — распоряжениями главы региона. На какое основание статьи 39.6 ЗК РФ опирается распоряжение о третьем участке — в публикации не уточнялось.</p>
+      <div class="media-pub-foot">
+        <a href="https://ufa.bfm.ru/news/63531" class="media-pub-link" target="_blank">Материал в источнике</a>
+      </div>
+    </article>
+
+    <!-- ═══ КАРТОЧКА 7 ═══ -->
+    <article class="media-pub-card">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet">УФА1.ру</span>
+        <span class="media-pub-date">20 декабря 2024</span>
+      </div>
+      <div class="media-pub-headline"><a href="https://ufa1.ru/text/business/2024/12/20/74904206/" target="_blank">«Азимут» — четвёртый раз. Глава Башкирии снова выдал земельный участок без торгов</a></div>
+      <p class="media-pub-excerpt">19 декабря 2024 года «Азимут» получил 32,38 сотки у гипермаркета «Максидом» на улице Сельской Богородской — четвёртый участок за два года, без торгов. Суммарно компания с момента основания в 2022 году получила участки у Маршала Жукова, дважды у Самохваловки и теперь у Максидома — все распоряжениями главы Башкирии. На момент выдачи четвёртого участка: убыток 6,1 млн рублей, сотрудников в штате нет, заявленные инвестиции — 300 млн рублей.</p>
+      <div class="media-pub-foot">
+        <a href="https://ufa1.ru/text/business/2024/12/20/74904206/" class="media-pub-link" target="_blank">Материал в источнике</a>
+      </div>
+    </article>
+
+    <!-- ═══ КАРТОЧКА 8 ═══ -->
+    <article class="media-pub-card">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet">УФА1.ру</span>
+        <span class="media-pub-date">9 января 2025</span>
+      </div>
+      <div class="media-pub-headline"><a href="https://ufa1.ru/text/economics/2025/01/09/74923931/" target="_blank">В 2024 году Башкирия выдала 1,82 кв. км без торгов. Три участка из одиннадцати заправочных достались «Азимуту»</a></div>
+      <p class="media-pub-excerpt">За 2024 год глава Башкирии передал инвесторам около 1,82 кв. км земли без торгов. Крупнейшие получатели — Салаватский завод полимеров (51,9 га), ДЭП-103 (33 га), «ЭКО» (15,2 га). Из одиннадцати участков под АЗС и придорожный сервис три достались «Азимуту» Кирилла Горбунова — компании с убытком 6,1 млн рублей и нулевым штатом на момент получения земли. Отдельным трендом года стали глэмпинги: несколько баз отдыха получили участки под туристические проекты.</p>
+      <div class="media-pub-foot">
+        <a href="https://ufa1.ru/text/economics/2025/01/09/74923931/" class="media-pub-link" target="_blank">Материал в источнике</a>
+      </div>
+    </article>
+
+    <!-- ═══ КАРТОЧКА 9 ═══ -->
+    <article class="media-pub-card">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet">УФА1.ру</span>
+        <span class="media-pub-date">14 апреля 2025</span>
+      </div>
+      <div class="media-pub-headline"><a href="https://ufa1.ru/text/economics/2025/04/14/75329786/" target="_blank">Что стало с землями, выданными без торгов в Башкирии: разбор по 116 проектам</a></div>
+      <p class="media-pub-excerpt">С 2018 года в Башкирии выдано не менее 116 участков без торгов под инвестпроекты. Часть реализована: мебельный завод в Туймазах, ресторан в Салавате, ФОК в Уфе. Часть застряла: полигон ТКО в Стерлитамаке — уголовное дело о злоупотреблении полномочиями, парковая зона у Тайрука — стройка растянулась на годы. Часть не появилась вовсе: китайский тракторный завод в Благовещенске ликвидирован, участок пустует. Формального механизма изъятия земли при неисполнении инвестобязательств не описано.</p>
+      <div class="media-pub-foot">
+        <a href="https://ufa1.ru/text/economics/2025/04/14/75329786/" class="media-pub-link" target="_blank">Материал в источнике</a>
+      </div>
+    </article>
+
+    <!-- ═══ КАРТОЧКА 10 ═══ -->
+    <article class="media-pub-card" style="border-top-color: var(--gold);">
+      <div class="media-pub-source">
+        <span class="media-pub-outlet" style="color:#8A6200; border-color:#8A6200;">Картотека АД · 18ААС</span>
+        <span class="media-pub-date">3 июня 2026</span>
+      </div>
+      <div class="media-pub-headline">18ААС снизил налоговые претензии к Анкору на 27 млн рублей — умысел подтверждён, кассация открыта</div>
+      <p class="media-pub-excerpt">Восемнадцатый арбитражный апелляционный суд (Челябинск) изменил решение АС РБ от 29.01.2026 по делу А07-10265/2025: НДС снижен с 114,9 до 87,9 млн руб. Основание — принцип сальдирования встречных операций с техническими контрагентами (Лира, Европроект, Сокол, Топаз). По контрагенту Вертикаль (только поставщик, без встречной реализации) сальдирование не применялось — 20,6 млн вычетов аннулированы полностью. Умышленный характер схемы (п. 3 ст. 122 НК РФ) апелляция подтвердила. Инспекции предписано отменить НДС и соответствующий штраф на 26 996 298,89 руб. С МИФНС № 33 взысканы судрасходы 80 000 руб. Постановление может быть обжаловано в АС Уральского округа до 3 августа 2026 года.</p>
+      <div class="media-pub-foot">
+        <span class="media-pub-link" style="cursor:default; color:var(--gold);">Постановление 18АП-2837/2026</span>
+      </div>
+    </article>
+
+  </div>
+  </div><!-- /media-pub-scroll-outer -->
+</div>
+
+<!-- SECTION 06: ОБЪЕКТЫ РАССЛЕДОВАНИЯ -->
+<div class="instances reveal" id="hronika">
+  <div class="inst-inner">
+    <div class="s-head" style="padding-top: 0; border-bottom-color: var(--rule);">
+      <span class="s-num">05</span>
+      <span class="s-title">Объекты расследования</span>
+      <span class="s-line"></span>
+    </div>
+    <div class="inst-grid">
+      <div class="inst-cell">
+        <div class="inst-num">01</div>
+        <div class="inst-name">УЗЭХИМ</div>
+        <div class="inst-desc">Уфимский завод экспериментальных химических продуктов. Получил землю без торгов под завод по ПП РФ № 629. Аффилирован с группой Иванова по решению суда А07-10265/2025. Вместе с землёй — муниципальная дорога.</div>
+        <div class="inst-count">ИНН 0277074450 · 3 материала</div>
+      </div>
+      <div class="inst-cell">
+        <div class="inst-num">02</div>
+        <div class="inst-name">Группа Анкор</div>
+        <div class="inst-desc">ООО «Анкор» + ЗАО «АФК-Ресурс» + ООО «Точка» + ИП Иванов К.А. Доначислено 114,9 млн руб. НДС. Производство нефтепродуктов без декларирования на площадке ТЭЦ-4.</div>
+        <div class="inst-count">ОГРН 1070277005380 · 8 материалов</div>
+      </div>
+      <div class="inst-cell">
+        <div class="inst-num">03</div>
+        <div class="inst-name">ПИК / Азимут</div>
+        <div class="inst-desc">Компании Горбунова К.В.: ООО «ПИК» (UFAOIL, Михайловка) + ООО «ПИК» (Дёмское шоссе, 4) + ООО «Азимут» (473 млн выручки, АЗС без торгов). Связь с Ивановым — через ПИК ОГРН 1160280118239.</div>
+        <div class="inst-count">3 компании · 5 материалов</div>
+      </div>
+      <div class="inst-cell">
+        <div class="inst-num">04</div>
+        <div class="inst-name">Вопрос к региону</div>
+        <div class="inst-desc">Бенефициары земель без торгов фигурируют в судебных решениях как нарушители законов РФ. Данные — в открытом доступе. Доводится ли эта информация до руководства Республики Башкортостан перед принятием решений о выделении участков?</div>
+        <div class="inst-count">Открытый вопрос · ПП РФ № 629</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-wordmark">Земля<em>·</em>Уфа<em>·</em>Без Торгов</div>
+        <p class="footer-tagline">
+          Расследовательский проект на основе открытых данных.<br>
+          ЕГРЮЛ, Картотека арбитражных дел, решения судов,<br>
+          данные ФНС и официальные ответы органов власти.<br>
+          terra_ufa_bez_torgov
+        </p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-h">Разделы</div>
+        <a href="#uzehim">УЗЭХИМ</a>
+        <a href="#ankor">Группа Анкор</a>
+        <a href="#gorbunov">Горбунов / Азимут</a>
+        <a href="#fns">ФНС — А07-10265/2025</a>
+        <a href="#media-publications">Публикации в СМИ</a>
+        <a href="#hronika">Хроника</a>
+      </div>
+      <div class="footer-col" id="footer-sources">
+        <div class="footer-col-h">Источники</div>
+        <a href="https://kad.arbitr.ru/" target="_blank" rel="noopener">Картотека арбитражных дел</a>
+        <a href="https://egrul.nalog.ru/" target="_blank" rel="noopener">ЕГРЮЛ (nalog.ru)</a>
+        <a href="https://sudrf.ru/" target="_blank" rel="noopener">ГАС Правосудие</a>
+        <a href="https://rosreestr.gov.ru/" target="_blank" rel="noopener">Росреестр</a>
+        <a href="https://www.nalog.gov.ru/" target="_blank" rel="noopener">ФНС России</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-h">Издание</div>
+        <a href="#">Об издании</a>
+        <a href="#">Редакция</a>
+        <a href="#" data-method="open">Методология</a>
+        <a href="#">Контакты</a>
+        <a href="#">Подать информацию</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 terra_ufa_bez_torgov. Все материалы — на основе открытых данных.</span>
+      <span>
+        <a href="#">Политика конфиденциальности</a>
+        &ensp;·&ensp;
+        <a href="#">Редакционная политика</a>
+        &ensp;·&ensp;
+        <a href="#">Об издании</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- METHODOLOGY MODAL -->
+<div class="method-overlay" id="methodOverlay" role="dialog" aria-modal="true" aria-label="Методология">
+  <div class="method-panel">
+
+    <div class="method-panel-head">
+      <button class="method-close" id="methodClose" aria-label="Закрыть">✕</button>
+      <div class="method-eyebrow">Методология · terra_ufa_bez_torgov · Открытые данные</div>
+      <div class="method-h1">Методология формирования выборки:<br>земля без торгов</div>
+      <p class="method-deck">Компании включаются в выборку не по декларируемому статусу, а по совокупности сигналов из четырех независимых источниковых слоев. Предмет наблюдения — компании, получившие земельные участки без проведения торгов на основании ПП РФ № 629 (импортозамещение) и аналогичных региональных оснований.</p>
+    </div>
+
+    <div class="method-panel-body">
+
+      <div class="method-layer-head">
+        <span class="method-layer-n">Слой 01</span>
+        <span class="method-layer-title">СМИ и публичное поле</span>
+      </div>
+      <table class="method-table">
+        <thead><tr><th>Сигнал</th><th>Источник</th><th>Вес</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Упоминание компании рядом с «без торгов», «629», «импортозамещение»</td>
+            <td>Региональные СМИ, Яндекс.Новости</td>
+            <td>Средний</td>
+          </tr>
+          <tr>
+            <td>Сообщение о выделении земли под «инвестпроект»</td>
+            <td>Официальные анонсы главы региона</td>
+            <td>Высокий</td>
+          </tr>
+          <tr>
+            <td>Жалоба конкурента, потерявшего участок</td>
+            <td>Деловые СМИ, судебные хроники</td>
+            <td>Высокий</td>
+          </tr>
+          <tr>
+            <td>Публикация о налоговом споре с доначислением НДС / прибыли</td>
+            <td>Экономические СМИ, картотека</td>
+            <td>Критический</td>
+          </tr>
+          <tr>
+            <td>Репортаж о стройке или производстве на участке</td>
+            <td>Региональные СМИ</td>
+            <td>Низкий (проверка реальности проекта)</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="method-crit">Медиасигнал не является доказательством нарушения. Он маркирует объект для дальнейшей проверки по остальным слоям.</div>
+
+      <div class="method-layer-head">
+        <span class="method-layer-n">Слой 02</span>
+        <span class="method-layer-title">Официальные региональные источники</span>
+      </div>
+      <table class="method-table">
+        <thead><tr><th>Документ</th><th>Где искать</th><th>Что ищем</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Постановление Главы / Правительства РБ о предоставлении участка</td>
+            <td>Официальный интернет-портал НПА РБ</td>
+            <td>Название компании, кадастровый номер, основание предоставления</td>
+          </tr>
+          <tr>
+            <td>Протоколы заседаний Минземимущества / КУМИ</td>
+            <td>Сайт министерства, ответы на запросы</td>
+            <td>Список участников конкурса (если был), обоснование «единственного претендента»</td>
+          </tr>
+          <tr>
+            <td>Изменения ПЗЗ / генплана</td>
+            <td>ГИС «Панорама», ФГИС ТП, сайт администрации</td>
+            <td>Переназначение вида разрешенного использования под конкретный проект</td>
+          </tr>
+          <tr>
+            <td>Реестр инвестиционных проектов региона</td>
+            <td>Агентство инвестиционного развития РБ</td>
+            <td>Включение в реестр как условие получения льготы</td>
+          </tr>
+          <tr>
+            <td>Публикации в вестнике муниципалитета</td>
+            <td>Официальный сайт муниципалитета</td>
+            <td>Извещения о предоставлении</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="method-crit"><strong>Критический признак:</strong> участок предоставляется без публичного извещения или с извещением, поданным за минимальный срок (менее 30 дней), при наличии единственного заявителя.</div>
+
+      <div class="method-layer-head">
+        <span class="method-layer-n">Слой 03</span>
+        <span class="method-layer-title">Судебные решения</span>
+      </div>
+      <p class="method-body">Основные базы: картотека арбитражных дел (kad.arbitr.ru), ГАС «Правосудие», банк решений арбитражных судов.</p>
+      <table class="method-table">
+        <thead><tr><th>Категория дела</th><th>Поисковые параметры</th><th>Что даёт</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Оспаривание отказа в предоставлении земли конкурентом</td>
+            <td>Предмет: «признание незаконным отказа», «земельный участок», «аренда»</td>
+            <td>Подтверждает наличие конкурента. Доказывает: не «единственный претендент»</td>
+          </tr>
+          <tr>
+            <td>Оспаривание договора аренды</td>
+            <td>Предмет: «признание договора недействительным», «торги», «629»</td>
+            <td>Прямое оспаривание схемы</td>
+          </tr>
+          <tr>
+            <td>Налоговый спор</td>
+            <td>Предмет: НДС, налог на прибыль, «схема», «необоснованная налоговая выгода»</td>
+            <td>Признак фиктивной деятельности или дробления</td>
+          </tr>
+          <tr>
+            <td>Банкротство / ликвидация после получения участка</td>
+            <td>ЕФРСБ + КАД</td>
+            <td>Признак использования компании как инструмента</td>
+          </tr>
+          <tr>
+            <td>Спор о субаренде или переуступке прав</td>
+            <td>Предмет: субаренда, переуступка, «земельный участок», «импортозамещение»</td>
+            <td>Перепродажа льготы</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="method-crit"><strong>Вес судебного сигнала:</strong> вступившее в силу решение с доначислением или признанием схемы переводит компанию из категории «под наблюдением» в категорию «подтверждённый факт».</div>
+
+      <div class="method-layer-head">
+        <span class="method-layer-n">Слой 04</span>
+        <span class="method-layer-title">Открытые базы данных юридических лиц</span>
+      </div>
+      <table class="method-table">
+        <thead><tr><th>Параметр</th><th>Источник</th><th>Признак попадания в выборку</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Дата регистрации компании</td>
+            <td>ЕГРЮЛ (ФНС)</td>
+            <td>Компания зарегистрирована менее чем за 2 года до получения участка</td>
+          </tr>
+          <tr>
+            <td>ОКВЭД</td>
+            <td>ЕГРЮЛ</td>
+            <td>Основной вид деятельности не соответствует заявленному инвестпроекту или изменен после получения земли</td>
+          </tr>
+          <tr>
+            <td>Учредители и директора</td>
+            <td>ЕГРЮЛ</td>
+            <td>Совпадение с учредителями / директорами других компаний из выборки</td>
+          </tr>
+          <tr>
+            <td>Размер уставного капитала</td>
+            <td>ЕГРЮЛ</td>
+            <td>Минимальный (10 тыс. руб.) при заявленных миллиардных инвестициях</td>
+          </tr>
+          <tr>
+            <td>Финансовая отчётность</td>
+            <td>ФНС «Прозрачный бизнес», СПАРК, Контур.Фокус</td>
+            <td>Выручка близка к нулю или резко падает после получения участка</td>
+          </tr>
+          <tr>
+            <td>Налоговые риски</td>
+            <td>ФНС «Прозрачный бизнес»</td>
+            <td>Высокий риск, массовый адрес, дисквалифицированный директор</td>
+          </tr>
+          <tr>
+            <td>Госзакупки</td>
+            <td>zakupki.gov.ru</td>
+            <td>Отсутствие госзакупок при заявленной производственной деятельности</td>
+          </tr>
+          <tr>
+            <td>Кадастровые данные участка</td>
+            <td>Росреестр (ЕГРН, ПКК)</td>
+            <td>История прав, предыдущие обременения, вид разрешенного использования до / после</td>
+          </tr>
+          <tr>
+            <td>Аффилированность</td>
+            <td>СПАРК / Контур.Фокус</td>
+            <td>Связи через общих учредителей, адреса, телефоны</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="method-layer-head">
+        <span class="method-layer-n">Критерии</span>
+        <span class="method-layer-title">Матрица квалификации</span>
+      </div>
+      <p class="method-body">Компания включается в публичную часть расследования при наличии не менее двух критических сигналов или одного критического и двух средних из разных слоев.</p>
+      <div class="method-matrix-grid">
+        <div class="mm-cell">
+          <div class="mm-level">Уровень I</div>
+          <div class="mm-h">Мониторинг</div>
+          <div class="mm-crit">1 сигнал из любого слоя</div>
+          <div class="mm-status">Внутренняя очередь. Не публикуется.</div>
+        </div>
+        <div class="mm-cell">
+          <div class="mm-level">Уровень II</div>
+          <div class="mm-h">Под наблюдением</div>
+          <div class="mm-crit">2+ средних сигнала из разных слоев</div>
+          <div class="mm-status">Упоминается без прямых выводов.</div>
+        </div>
+        <div class="mm-cell" style="background:var(--parchment);">
+          <div class="mm-level">Уровень III</div>
+          <div class="mm-h">Задокументировано</div>
+          <div class="mm-crit">Критический сигнал + 2 поддерживающих</div>
+          <div class="mm-status">Включается в материал с описанием схемы.</div>
+        </div>
+        <div class="mm-cell" style="background:var(--ink);">
+          <div class="mm-level" style="color:var(--gold);">Уровень IV</div>
+          <div class="mm-h" style="color:var(--parchment);">Подтверждено</div>
+          <div class="mm-crit" style="color:#8A7E72;">Вступившее в силу судебное решение или акт проверки</div>
+          <div class="mm-status" style="color:#5A4E44;">Публикуется с прямой ссылкой на решение.</div>
+        </div>
+      </div>
+
+      <div class="method-note">
+        <strong>Ограничения методологии.</strong> Выборка строится исключительно на открытых данных. Методология не позволяет установить умысел и не является заменой официальной проверки. Квалификация действий как правонарушения возможна только на основании вступившего в силу судебного акта или акта уполномоченного органа.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var overlay = document.getElementById('methodOverlay');
+  var closeBtn = document.getElementById('methodClose');
+  if (!overlay || !closeBtn) return;
+
+  function openMethod(e) {
+    if (e) e.preventDefault();
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    overlay.scrollTop = 0;
+  }
+  function closeMethod() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  [].forEach.call(document.querySelectorAll('[data-method="open"]'), function (el) {
+    el.addEventListener('click', openMethod);
+  });
+  closeBtn.addEventListener('click', closeMethod);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeMethod();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeMethod();
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var grid = document.getElementById('media-pub-grid');
+  var prevBtn = document.getElementById('pub-prev');
+  var nextBtn = document.getElementById('pub-next');
+  if (!grid || !prevBtn || !nextBtn) return;
+
+  function cardWidth() {
+    var card = grid.querySelector('.media-pub-card');
+    return card ? card.offsetWidth + 3 : 373;
+  }
+
+  prevBtn.addEventListener('click', function () {
+    grid.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', function () {
+    grid.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+  });
+
+  /* drag-to-scroll */
+  var isDown = false, startX, scrollLeft;
+  grid.addEventListener('mousedown', function (e) {
+    isDown = true;
+    startX = e.pageX - grid.offsetLeft;
+    scrollLeft = grid.scrollLeft;
+  });
+  grid.addEventListener('mouseleave', function () { isDown = false; });
+  grid.addEventListener('mouseup', function () { isDown = false; });
+  grid.addEventListener('mousemove', function (e) {
+    if (!isDown) return;
+    e.preventDefault();
+    var x = e.pageX - grid.offsetLeft;
+    grid.scrollLeft = scrollLeft - (x - startX) * 1.4;
+  });
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ──────────────────────────────────────────────
+     1. READING PROGRESS BAR
+     Thin gold line that fills as user scrolls.
+     Uses rAF + passive listener — zero jank.
+  ────────────────────────────────────────────── */
+  var rp = document.createElement('div');
+  rp.id = 'rp';
+  document.body.appendChild(rp);
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var scrolled = window.scrollY || window.pageYOffset;
+      var total = document.documentElement.scrollHeight - window.innerHeight;
+      if (total > 0) rp.style.transform = 'scaleX(' + (scrolled / total) + ')';
+      ticking = false;
+    });
+  }, { passive: true });
+
+  /* ──────────────────────────────────────────────
+     2. NUMBER COUNTERS
+     Fires when 10 % of element enters viewport.
+     Isolated function — no closure-in-loop risk.
+     Guard flag prevents double-fire.
+  ────────────────────────────────────────────── */
+  function startCounter(el) {
+    if (el._done) return;
+    el._done = true;
+    var target  = parseFloat(el.dataset.count);
+    var isFloat = el.dataset.count.indexOf('.') > -1;
+    var DUR = 1600, t0 = null;
+
+    function render(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / DUR, 1);
+      var e = 1 - Math.pow(1 - p, 3);          /* ease-out cubic */
+      var v = target * e;
+      el.textContent = isFloat
+        ? v.toFixed(1).replace('.', ',')
+        : String(Math.round(v));
+      if (p < 1) { requestAnimationFrame(render); }
+      else {
+        el.textContent = isFloat
+          ? target.toFixed(1).replace('.', ',')
+          : String(Math.round(target));
+      }
+    }
+    requestAnimationFrame(render);
+  }
+
+  var counterEls = [].slice.call(document.querySelectorAll('[data-count]'));
+  if (counterEls.length) {
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            startCounter(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      counterEls.forEach(function (el) { io.observe(el); });
+    } else {
+      /* fallback: run immediately */
+      counterEls.forEach(startCounter);
+    }
+  }
+
+  /* ──────────────────────────────────────────────
+     3. TYPEWRITER on HERO H1
+     HTML-aware: skips through <em>…</em> tags
+     instantly so markup stays intact.
+     Starts after parent reveal-animation (≈1 s).
+  ────────────────────────────────────────────── */
+  var h1 = document.querySelector('.hero h1');
+  if (h1) {
+    var src = h1.innerHTML;
+    h1.style.opacity = '0';
+
+    setTimeout(function () {
+      var acc = '';
+      var i   = 0;
+      var SPD = 23;      /* ms per visible character */
+
+      /* blinking cursor */
+      var cur = document.createElement('span');
+      cur.className = 'tw-cursor';
+
+      h1.innerHTML = '';
+      h1.style.opacity = '1';
+      h1.appendChild(cur);
+
+      function tick() {
+        if (i >= src.length) {
+          h1.innerHTML = src;                    /* final state — clean */
+          h1.appendChild(cur);
+          setTimeout(function () {
+            if (cur.parentNode) cur.parentNode.removeChild(cur);
+          }, 2200);
+          return;
+        }
+
+        var ch = src[i];
+        if (ch === '<') {
+          /* consume entire tag at once (no visible delay) */
+          var end = src.indexOf('>', i);
+          if (end !== -1) { acc += src.slice(i, end + 1); i = end + 1; }
+          else             { acc += ch; i++; }
+          h1.innerHTML = acc;
+          h1.appendChild(cur);
+          tick();          /* recurse immediately */
+          return;
+        }
+
+        acc += ch;
+        i++;
+        h1.innerHTML = acc;
+        h1.appendChild(cur);
+        setTimeout(tick, SPD);
+      }
+
+      tick();
+    }, 1050);   /* wait for hero fadeUp to finish */
+  }
+
+})();
+</script>
+</body>
+</html>
