@@ -3,26 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>terra_ufa_bez_torgov — Земля без торгов: расследование</title>
+  <title>Земля без торгов в Уфе и Башкортостане — расследование по открытым данным</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
 
   <!-- SEO -->
-  <meta name="description" content="Расследование «Земля·Уфа·Без Торгов»: как башкирские предприятия получают государственные земельные участки без торгов под предлогом импортозамещения. УЗЭХИМ, группа Анкор, Горбунов/Азимут. ФНС доначислила 114,9 млн руб. НДС; 18ААС снизил до 87,9 млн, умысел подтверждён (постановление 03.06.2026). Открытые данные.">
-  <meta name="keywords" content="земля без торгов, УЗЭХИМ, Анкор, Горбунов, Азимут, ФНС, Башкортостан, импортозамещение, ПП 629, расследование">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Редакция «Своя Позиция»">
+  <meta name="description" content="Земля без торгов в Уфе и Башкортостане: как предприятия получают государственные участки без торгов под предлогом импортозамещения. УЗЭХИМ, группа Анкор, Горбунов/Азимут. ФНС доначислила 114,9 млн руб. НДС; 18ААС снизил до 87,9 млн, умысел подтверждён (03.06.2026). Расследование по открытым данным.">
+  <meta name="keywords" content="земля без торгов Уфа, земля без торгов Башкортостан, земля без торгов Башкирия, участки без торгов, аренда земли без торгов, ПП РФ 629, импортозамещение земля, приоритетный инвестпроект Башкортостан, УЗЭХИМ, Анкор, Азимут, Горбунов, ФНС">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="Редакция">
+  <meta name="geo.region" content="RU-BA">
+  <meta name="geo.placename" content="Уфа, Республика Башкортостан">
   <link rel="canonical" href="https://zemlya-bez-torgov.netlify.app/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="Земля·Уфа·Без Торгов">
-  <meta property="og:title" content="Земля·Уфа·Без Торгов — расследование на основе открытых данных">
+  <meta property="og:site_name" content="Земля без торгов — Уфа и Башкортостан">
+  <meta property="og:title" content="Земля без торгов в Уфе и Башкортостане — расследование по открытым данным">
   <meta property="og:description" content="Как башкирские предприятия получают государственные земельные участки без торгов под предлогом импортозамещения. НДС Анкора снижен апелляцией с 114,9 до 87,9 млн руб. — умысел подтверждён (18ААС, 03.06.2026).">
   <meta property="og:url" content="https://zemlya-bez-torgov.netlify.app/">
+  <meta property="og:image" content="https://zemlya-bez-torgov.netlify.app/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Земля без торгов в Уфе и Башкортостане — расследование">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Земля·Уфа·Без Торгов — расследование">
+  <meta name="twitter:title" content="Земля без торгов в Уфе и Башкортостане — расследование">
   <meta name="twitter:description" content="Земля без торгов + налоговая схема: НДС Анкора снижен 18ААС с 114,9 до 87,9 млн руб. — умысел подтверждён (03.06.2026). УЗЭХИМ, Горбунов/Азимут.">
+  <meta name="twitter:image" content="https://zemlya-bez-torgov.netlify.app/og-cover.jpg">
 
   <style>
     /* ─── TOKENS ─── */
@@ -943,8 +950,8 @@
       .topline { flex-direction: column; gap: 0.3rem; text-align: center; }
       .masthead-wordmark { font-size: 1.8rem; letter-spacing: 0.08em; }
       nav { justify-content: flex-start; overflow-x: auto; }
-      .hero { height: 72vh; }
-      .hero-content { padding: 2rem 1.5rem 2.5rem; }
+      .hero { height: auto; min-height: 0; max-height: none; }
+      .hero-content { position: relative; padding: 2rem 1.5rem 2.5rem; }
       .r-3col { grid-template-columns: 1fr; }
       .inst-grid { grid-template-columns: 1fr; }
       .media-pub-card { flex: 0 0 88vw; }
@@ -1162,36 +1169,37 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://terra-ufa-bez-torgov.ru/",
-        "url": "https://terra-ufa-bez-torgov.ru/",
-        "name": "Земля·Уфа·Без Торгов — расследование на основе открытых данных",
+        "@id": "https://zemlya-bez-torgov.netlify.app/",
+        "url": "https://zemlya-bez-torgov.netlify.app/",
+        "name": "Земля без торгов в Уфе и Башкортостане — расследование на основе открытых данных",
         "description": "Как башкирские предприятия получают государственные земельные участки без торгов под предлогом импортозамещения, пока ФНС доначисляет им сотни миллионов рублей.",
+        "image": "https://zemlya-bez-torgov.netlify.app/og-cover.jpg",
         "inLanguage": "ru",
         "publisher": {
           "@type": "Organization",
-          "name": "Своя Позиция",
-          "url": "https://terra-ufa-bez-torgov.ru/"
+          "name": "Редакция",
+          "url": "https://zemlya-bez-torgov.netlify.app/"
         }
       },
       {
         "@type": "ItemList",
-        "@id": "https://terra-ufa-bez-torgov.ru/#media-publications",
+        "@id": "https://zemlya-bez-torgov.netlify.app/#media-publications",
         "name": "Публикации в СМИ — Земля·Уфа·Без Торгов",
         "description": "Рерайты публикаций СМИ по теме расследования: земля без торгов, УЗЭХИМ, группа Анкор, Горбунов/Азимут",
-        "url": "https://terra-ufa-bez-torgov.ru/#media-publications",
+        "url": "https://zemlya-bez-torgov.netlify.app/#media-publications",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "item": {
               "@type": "NewsArticle",
-              "@id": "https://terra-ufa-bez-torgov.ru/#pub-1",
+              "@id": "https://zemlya-bez-torgov.netlify.app/#pub-1",
               "headline": "Земля без торгов: как башкирское предприятие получило государственный актив и муниципальную дорогу в нагрузку",
               "datePublished": "2026-05-21",
               "dateModified": "2026-05-21",
               "description": "УЗЭХИМ получил земельный участок без торгов в рамках ПП РФ № 629 — под строительство завода для импортозамещения. Никакого строительства нет. Вместе с землёй к предприятию фактически перешла муниципальная автомобильная дорога.",
-              "author": {"@type": "Organization", "name": "Своя Позиция"},
-              "publisher": {"@type": "Organization", "name": "Своя Позиция"},
+              "author": {"@type": "Organization", "name": "Редакция"},
+              "publisher": {"@type": "Organization", "name": "Редакция"},
               "about": ["УЗЭХИМ", "ПП РФ № 629", "земля без торгов", "Башкортостан"],
               "keywords": "УЗЭХИМ, земля без торгов, ПП 629, импортозамещение, Башкортостан",
               "inLanguage": "ru"
@@ -1202,13 +1210,13 @@
             "position": 2,
             "item": {
               "@type": "NewsArticle",
-              "@id": "https://terra-ufa-bez-torgov.ru/#pub-2",
+              "@id": "https://zemlya-bez-torgov.netlify.app/#pub-2",
               "headline": "Арбитраж подтвердил: 114,9 млн рублей доначислены законно — Анкор проиграл ФНС в первой инстанции",
               "datePublished": "2026-01-29",
               "dateModified": "2026-01-29",
               "description": "Арбитражный суд Республики Башкортостан отказал ООО «Анкор» в иске к МИФНС № 33. Решение налоговой от 30.09.2024 о доначислении 114,9 млн рублей НДС признано законным. Умышленная схема с пятью техническими контрагентами.",
-              "author": {"@type": "Organization", "name": "Своя Позиция"},
-              "publisher": {"@type": "Organization", "name": "Своя Позиция"},
+              "author": {"@type": "Organization", "name": "Редакция"},
+              "publisher": {"@type": "Organization", "name": "Редакция"},
               "about": ["Анкор", "ФНС", "НДС", "А07-10265/2025"],
               "keywords": "Анкор, ФНС, НДС, арбитраж, налоговая схема, Башкортостан",
               "inLanguage": "ru"
@@ -1219,13 +1227,13 @@
             "position": 3,
             "item": {
               "@type": "NewsArticle",
-              "@id": "https://terra-ufa-bez-torgov.ru/#appeal-1",
+              "@id": "https://zemlya-bez-torgov.netlify.app/#appeal-1",
               "headline": "18ААС снизил налоговые претензии к Анкору на 27 млн рублей — умысел подтверждён (постановление 18АП-2837/2026)",
               "datePublished": "2026-06-03",
               "dateModified": "2026-06-09",
               "description": "Восемнадцатый арбитражный апелляционный суд изменил решение АС РБ от 29.01.2026 по делу А07-10265/2025: НДС снижен с 114,9 до 87,9 млн руб. на основании принципа сальдирования встречных операций. 26 996 298,89 руб. признаны излишне доначисленными. Умышленный характер нарушения подтверждён. С МИФНС № 33 взысканы судебные расходы 80 000 руб.",
-              "author": {"@type": "Organization", "name": "Своя Позиция"},
-              "publisher": {"@type": "Organization", "name": "Своя Позиция"},
+              "author": {"@type": "Organization", "name": "Редакция"},
+              "publisher": {"@type": "Organization", "name": "Редакция"},
               "about": ["Анкор", "18ААС", "НДС", "А07-10265/2025", "апелляция", "сальдирование"],
               "keywords": "Анкор, 18ААС, апелляция, НДС, сальдирование, налоговая схема, Башкортостан",
               "inLanguage": "ru"
@@ -1306,7 +1314,7 @@
   <div class="hero-vignette"></div>
   <div class="hero-content reveal delay-2">
     <div class="hero-kicker">Специальный репортаж · Земельная политика · Импортозамещение</div>
-    <h1><em>Группа компаний</em> получает государственные активы без торгов — пока налоговая доначисляет сотни миллионов</h1>
+    <h1><em>Земля без торгов</em> в Уфе и Башкортостане: как группа компаний получает государственные участки, пока налоговая доначисляет сотни миллионов</h1>
     <p class="hero-deck">
       В Башкирии земельные участки выдаются без конкурса под предлогом импортозамещения и приоритетных инвестпроектов. Некоторые бенефициары этих участков — компании, которых ФНС уличила в создании фиктивного документооборота. Всё это есть в открытом доступе.
     </p>
@@ -2214,6 +2222,32 @@
     var x = e.pageX - grid.offsetLeft;
     grid.scrollLeft = scrollLeft - (x - startX) * 1.4;
   });
+
+  /* ── медленная автопрокрутка (ping-pong) ── */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    grid.style.scrollSnapType = 'none';   /* убираем «залипание» для плавного хода */
+    var SPEED = 0.35;                      /* px за кадр ≈ 21 px/с — медленно */
+    var dir = 1, hovered = false;
+    grid.addEventListener('mouseenter', function () { hovered = true; });
+    grid.addEventListener('mouseleave', function () { hovered = false; });
+    grid.addEventListener('touchstart', function () { hovered = true; }, { passive: true });
+    grid.addEventListener('touchend', function () { hovered = false; });
+
+    var pos = grid.scrollLeft;   /* float-накопитель: scrollLeft округляется, дробный шаг иначе теряется */
+    (function tick() {
+      var max = grid.scrollWidth - grid.clientWidth;
+      if (!hovered && !isDown && max > 0) {
+        pos += SPEED * dir;
+        if (pos >= max) { pos = max; dir = -1; }
+        else if (pos <= 0) { pos = 0; dir = 1; }
+        grid.scrollLeft = pos;
+      } else {
+        pos = grid.scrollLeft;   /* синхронизация при паузе / ручном скролле */
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
 })();
 </script>
 
